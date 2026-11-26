@@ -29,7 +29,7 @@
 <body>
   <header class="topbar"><div class="wrap nav">
     <a class="brand" href="#baslangic" aria-label="Vahşi Toprak ana sayfa"><span class="brand-mark">✦</span> VAHŞİ TOPRAK</a>
-    <nav class="nav-links" aria-label="Ana menü"><a href="#dunya">Dünya</a><a href="#kurulum">Kurulum</a><a href="#katil">Bize katıl</a></nav>
+    <nav class="nav-links" aria-label="Ana menü"><a href="#dunya">Dünya</a><a href="#kurulum">Kurulum</a><a href="https://discord.gg/gUyzGGsPpa" target="_blank" rel="noopener noreferrer">Discord’a katıl</a></nav>
   </div></header>
   <main>
     <section class="hero" id="baslangic"><img class="sun" src="assets/vahsi-toprak-amblem.png" alt="Vahşi Toprak kırmızı ay ve kale amblemi"><div class="mountains"></div><div class="pine"></div>
@@ -37,7 +37,7 @@
         <div class="eyebrow">Yeni bir maceraya hazır mısın?</div>
         <h1>VAHŞİ<br><span>TOPRAK</span></h1>
         <p>Ormanların derinliklerinde kendi hikâyeni yaz. Dostlarınla keşfet, inşa et ve bu dünyanın sırlarını ortaya çıkar.</p>
-        <div class="actions"><a class="btn btn-primary" href="assets/vahsi-toprak-26.3-fabric.mrpack" download>⬇ &nbsp; Mod paketini indir <span>→</span></a><a class="btn btn-outline" href="#katil">Discord’a katıl</a></div>
+        <div class="actions"><a class="btn btn-primary" href="assets/vahsi-toprak-26.3-fabric.mrpack" download>⬇ &nbsp; Mod paketini indir <span>→</span></a><a class="btn btn-outline" href="https://discord.gg/gUyzGGsPpa" target="_blank" rel="noopener noreferrer">Discord’a katıl</a></div>
         <div class="hint">Paketi indir, Modrinth App’e aktar ve oynamaya hazır ol.</div>
       </div></div>
     </section>
@@ -60,7 +60,7 @@
       </div>
       <aside class="modbox"><h3>Vahşi Toprak Mod Paketi</h3><p>30 mod · Minecraft 26.3 · Fabric Loader 0.20.1</p><ul class="mod-list" id="mod-list"><li>Advanced Netherite</li><li>AppleSkin</li><li>Balm</li><li>Easy Anvils</li><li>Fabric API</li><li>FallingTree</li><li>Farmer’s Delight: Refabricated</li><li>Flan</li><li>Forge Config API Port</li><li>Friends &amp; Foes</li><li>Iris</li><li>Jade</li><li>JamLib</li><li>JEI</li><li>Litematica</li><li>Lithium</li><li>LYGraves</li><li>MaLiLib</li><li>Mezz’s Config</li><li>Naturalist</li><li>Puzzles Lib</li><li>Resourceful Lib</li><li>RightClickHarvest</li><li>Shogi</li><li>Sodium</li><li>Traveler’s Backpack</li><li>Visual Workbench</li><li>Simple Voice Chat</li><li>Waystones</li><li>Xaero’s Minimap</li></ul><span class="pill" id="loader-pill">FABRIC 0.20.1 · MINECRAFT 26.3</span><div class="pack-action"><a class="btn btn-primary" href="assets/vahsi-toprak-26.3-fabric.mrpack" download>⬇ Mod paketini indir (.mrpack)</a><p>Modrinth App’te .mrpack dosyasını yükleyince paket içindeki modlar ve Fabric kuruluma eklenir. Uyarı çıkarsa yalnızca bu sayfadan indirdiğin Vahşi Toprak paketine devam et.</p></div></aside>
     </div></section>
-    <section class="join" id="katil"><div class="wrap"><div class="join-panel"><div><div class="eyebrow">Yolunu bulamadın mı?</div><h2>Discord’da buluşalım.</h2><p>Kurulumda yardıma ihtiyacın varsa veya topluluğu tanımak istiyorsan Discord sunucumuza uğra.</p></div><div class="join-actions"><a class="btn btn-primary" id="discord-link" href="#katil">Discord bağlantısı eklenecek <span>↗</span></a></div></div></div></section>
+    <section class="join" id="katil"><div class="wrap"><div class="join-panel"><div><div class="eyebrow">Yolunu bulamadın mı?</div><h2>Discord’da buluşalım.</h2><p>Kurulumda yardıma ihtiyacın varsa veya topluluğu tanımak istiyorsan Discord sunucumuza uğra.</p></div><div class="join-actions"><a class="btn btn-primary" id="discord-link" href="https://discord.gg/gUyzGGsPpa" target="_blank" rel="noopener noreferrer">Discord’a katıl <span>↗</span></a></div></div></div></section>
   </main>
   <footer class="footer"><div class="wrap footer-inner"><strong>✦ VAHŞİ TOPRAK</strong><span>Birlikte keşfet. Birlikte inşa et.</span><span>© 2026 Vahşi Toprak</span></div></footer>
   <script>
@@ -71,7 +71,8 @@
       discordInvite: "https://discord.gg/gUyzGGsPpa",
       mods: ["Advanced Netherite", "AppleSkin", "Balm", "Easy Anvils", "Fabric API", "FallingTree", "Farmer’s Delight: Refabricated", "Flan", "Forge Config API Port", "Friends & Foes", "Iris", "Jade", "JamLib", "JEI", "Litematica", "Lithium", "LYGraves", "MaLiLib", "Mezz’s Config", "Naturalist", "Puzzles Lib", "Resourceful Lib", "RightClickHarvest", "Shogi", "Sodium", "Traveler’s Backpack", "Visual Workbench", "Simple Voice Chat", "Waystones", "Xaero’s Minimap"]
     };
-    if (serverInfo.minecraftVersion) document.getElementById("version-text").textContent = `Gerekli oyun sürümü: Minecraft ${serverInfo.minecraftVersion}.`;
+    const versionText = document.getElementById("version-text");
+    if (serverInfo.minecraftVersion && versionText) versionText.textContent = `Gerekli oyun sürümü: Minecraft ${serverInfo.minecraftVersion}.`;
     if (serverInfo.modLoader) document.getElementById("loader-pill").textContent = `${serverInfo.modLoader.toUpperCase()} MODLARI`;
     if (serverInfo.mods.length) document.getElementById("mod-list").innerHTML = serverInfo.mods.map(mod => `<li>${mod.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}</li>`).join("");
     if (serverInfo.discordInvite) { const link = document.getElementById("discord-link"); link.href = serverInfo.discordInvite; link.target = "_blank"; link.rel = "noopener noreferrer"; link.innerHTML = "Discord’a katıl <span>↗</span>"; }
