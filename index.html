@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111b13">
+  <meta name="description" content="Vahşi Toprak — birlikte keşfet, inşa et ve hayatta kal. Sunucuya katılmadan önce kurulum adımlarını tamamla.">
+  <title>Vahşi Toprak — Macera seni çağırıyor</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Russo+One&display=swap');
+    :root{--bg:#101711;--panel:#18231a;--panel2:#202d21;--green:#b1e17b;--green2:#7db34b;--cream:#f3f0df;--muted:#a9b3a4;--line:#334332;--gold:#f1cb72}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.6 'DM Sans',sans-serif} a{color:inherit;text-decoration:none} button{font:inherit}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}.topbar{position:absolute;inset:0 0 auto;z-index:2}.nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.03em}.brand-mark{width:38px;height:38px;background:var(--green);color:#14200f;display:grid;place-items:center;font-size:22px;border-radius:9px;box-shadow:inset 0 -5px #6d9c42}.nav-links{display:flex;gap:30px;color:#d1d8ca;font-size:14px}.nav-links a:hover{color:var(--green)}
+    .hero{min-height:690px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 74% 44%,#496c3c 0,#293f2b 25%,#17261a 53%,#101711 78%)}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#101711 4%,rgba(16,23,17,.92) 34%,rgba(16,23,17,.25) 100%),linear-gradient(0deg,#101711 0%,transparent 35%)}
+    .sun{position:absolute;width:190px;height:190px;right:17%;top:20%;border-radius:50%;object-fit:cover;object-position:center;opacity:1;border:2px solid #d62e35;box-shadow:0 0 22px #fa293b99,0 0 76px #c7202d55}
+    .mountains{position:absolute;inset:auto 0 0;height:45%;opacity:.75;background:linear-gradient(135deg,transparent 0 27%,#243b28 27% 44%,transparent 44%) 0 100%/49% 100% no-repeat,linear-gradient(45deg,transparent 0 33%,#304a30 33% 54%,transparent 54%) 30% 100%/60% 100% no-repeat,linear-gradient(135deg,transparent 0 33%,#1c3021 33% 54%,transparent 54%) 100% 100%/54% 82% no-repeat}
+    .pine{position:absolute;bottom:0;right:10%;height:290px;width:170px;opacity:.9;background:linear-gradient(180deg,transparent 0 20%,#14231a 20% 34%,transparent 34%) 50% 4%/100% 100% no-repeat}
+    .pine:before{content:"";position:absolute;left:19px;top:0;width:132px;height:250px;background:linear-gradient(135deg,transparent 0 38%,#172a1d 38% 62%,transparent 62%) 0 0/100% 42% no-repeat,linear-gradient(135deg,transparent 0 38%,#1d3522 38% 62%,transparent 62%) 0 35%/100% 42% no-repeat,linear-gradient(135deg,transparent 0 38%,#233c27 38% 62%,transparent 62%) 0 70%/100% 42% no-repeat}
+    .hero-content{position:relative;z-index:1;max-width:650px;padding:100px 0 95px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:22px;height:2px;background:var(--green)}
+    h1,h2,h3,p{margin-top:0} h1{font:clamp(54px,8vw,92px)/.98 'Russo One',Impact,sans-serif;letter-spacing:.01em;margin:20px 0 22px;text-shadow:0 5px 0 #1a2a18}h1 span{color:var(--green)}.hero p{max-width:520px;color:#c4cec0;font-size:18px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:8px;padding:14px 20px;font-weight:800;font-size:14px;transition:.18s transform,.18s background}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--green);color:#14200f;box-shadow:0 4px 0 #638c40}.btn-primary:hover{background:#c4f08f}.btn-outline{border:1px solid #87977d;background:#18231acc;color:var(--cream)}.hint{font-size:12px;color:#95a18f;margin-top:19px}
+    .section{padding:88px 0}.section-head{max-width:650px;margin-bottom:36px}.section-head h2{font:clamp(32px,4vw,48px)/1.1 'Russo One',Impact,sans-serif;margin:10px 0 14px}.section-head p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:24px;position:relative;overflow:hidden}.card-num{font:32px 'Russo One',Impact,sans-serif;color:var(--green2);opacity:.8}.card h3{font-size:18px;margin:16px 0 8px}.card p{font-size:14px;color:var(--muted);margin:0}.card-icon{position:absolute;right:20px;top:21px;font-size:24px;filter:saturate(.8)}
+    .setup{background:#151e16;border-top:1px solid #263327;border-bottom:1px solid #263327}.setup-grid{display:grid;grid-template-columns:1fr .85fr;gap:50px;align-items:start}.requirements{display:grid;gap:12px}.req{display:flex;gap:15px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px}.req-icon{flex:0 0 38px;height:38px;border-radius:9px;background:#293c26;display:grid;place-items:center;font-size:18px}.req strong{display:block;font-size:14px}.req span{display:block;color:var(--muted);font-size:13px;margin-top:3px}.req a{color:var(--green);text-decoration:underline;text-underline-offset:3px}.req code{display:inline-block;color:var(--green);background:#263528;padding:2px 6px;border-radius:5px;word-break:break-all}.copy-btn{margin-left:7px;background:#334732;color:#e1e7db;border:1px solid #536d46;border-radius:6px;padding:5px 9px;font-size:11px;font-weight:800;cursor:pointer}.copy-btn:hover{background:#49623d}.modbox{background:linear-gradient(145deg,#273825,#1a271c);border:1px solid #496043;border-radius:14px;padding:25px}.modbox h3{font:22px 'Russo One',Impact,sans-serif;margin:0 0 8px}.modbox p{font-size:13px;color:#bac6b3}.mod-list{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px}.mod-list li{display:flex;align-items:center;gap:8px;font-size:13px;color:#e1e7db;min-width:0}.mod-list li:before{content:"✦";color:var(--green);flex:none}.mod-list .empty{color:var(--muted);font-size:13px}.pill{display:inline-block;background:#364a30;border:1px solid #536d46;color:var(--green);font-size:11px;font-weight:800;padding:4px 9px;border-radius:100px;margin-top:14px}.pack-action{border-top:1px solid #496043;margin-top:20px;padding-top:18px}.pack-action .btn{width:100%;text-align:center}.pack-action p{margin:12px 0 0;font-size:12px;line-height:1.55;color:#bac6b3}
+    .join{padding:76px 0}.join-panel{background:linear-gradient(115deg,#293d28,#1c2b1d 65%,#253522);border:1px solid #496043;border-radius:18px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:20px;position:relative;overflow:hidden}.join-panel:after{content:"✦";position:absolute;right:34%;font-size:170px;color:#b1e17b0c;top:-53px}.join-panel h2{font:clamp(30px,4vw,42px)/1.08 'Russo One',Impact,sans-serif;margin:0 0 10px}.join-panel p{color:#bac6b3;margin:0;max-width:530px}.join-actions{position:relative;z-index:1;flex-shrink:0}.footer{border-top:1px solid #263327;padding:25px 0;color:#899587;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px}.footer strong{color:#d8e0d3}
+    @media(max-width:760px){.hero{min-height:650px}.nav-links{gap:14px}.nav-links a:nth-child(1){display:none}.sun{right:6%;top:23%;width:135px;height:135px}.pine{right:-1%;transform:scale(.76);transform-origin:bottom right}.hero-content{padding-top:110px}.hero p{font-size:16px}.cards{grid-template-columns:1fr}.setup-grid{grid-template-columns:1fr;gap:25px}.join-panel{padding:30px;display:block}.join-actions{margin-top:24px}.footer-inner{display:block}.footer-inner span{display:block;margin-top:5px}}
+    @media(max-width:420px){.wrap{width:min(100% - 30px,1120px)}.nav{padding:17px 0}.nav-links{font-size:12px;gap:12px}.brand{font-size:14px}.hero{min-height:610px}.actions .btn{width:100%}.section{padding:65px 0}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="wrap nav">
+    <a class="brand" href="#baslangic" aria-label="Vahşi Toprak ana sayfa"><span class="brand-mark">✦</span> VAHŞİ TOPRAK</a>
+    <nav class="nav-links" aria-label="Ana menü"><a href="#dunya">Dünya</a><a href="#kurulum">Kurulum</a><a href="#katil">Bize katıl</a></nav>
+  </div></header>
+  <main>
+    <section class="hero" id="baslangic"><img class="sun" src="assets/vahsi-toprak-amblem.png" alt="Vahşi Toprak kırmızı ay ve kale amblemi"><div class="mountains"></div><div class="pine"></div>
+      <div class="wrap"><div class="hero-content">
+        <div class="eyebrow">Yeni bir maceraya hazır mısın?</div>
+        <h1>VAHŞİ<br><span>TOPRAK</span></h1>
+        <p>Ormanların derinliklerinde kendi hikâyeni yaz. Dostlarınla keşfet, inşa et ve bu dünyanın sırlarını ortaya çıkar.</p>
+        <div class="actions"><a class="btn btn-primary" href="assets/vahsi-toprak-26.3-fabric.mrpack" download>⬇ &nbsp; Mod paketini indir <span>→</span></a><a class="btn btn-outline" href="#katil">Discord’a katıl</a></div>
+        <div class="hint">Paketi indir, Modrinth App’e aktar ve oynamaya hazır ol.</div>
+      </div></div>
+    </section>
+    <section class="section" id="dunya"><div class="wrap">
+      <div class="section-head"><div class="eyebrow">Bu dünyada</div><h2>Macera, birlikte daha güzel.</h2><p>Vahşi Toprak; keşfetmek, üretmek ve ekipçe güzel anılar biriktirmek için kuruldu.</p></div>
+      <div class="cards">
+        <article class="card"><span class="card-icon">🌲</span><div class="card-num">01</div><h3>Keşfedilecek topraklar</h3><p>Yeni bölgeleri keşfet, kaynakları topla ve dünyanın sunduğu güzellikleri bul.</p></article>
+        <article class="card"><span class="card-icon">🧱</span><div class="card-num">02</div><h3>Kendi izini bırak</h3><p>Hayalindeki yapıyı kur, üssünü geliştir ve macerana kendi yönünü ver.</p></article>
+        <article class="card"><span class="card-icon">🔥</span><div class="card-num">03</div><h3>Ekipçe oyna</h3><p>Diğer oyuncularla tanış, yardımlaş ve yeni maceralara beraber çık.</p></article>
+      </div>
+    </div></section>
+    <section class="section setup" id="kurulum"><div class="wrap setup-grid">
+      <div><div class="section-head"><div class="eyebrow">Kolay kurulum</div><h2>Paketi indir, oyuna başla.</h2><p>Modları tek tek aramana gerek yok. Paket Minecraft 26.3, Fabric ve gerekli modlarla hazırlandı.</p></div>
+        <div class="requirements">
+          <div class="req"><div class="req-icon">🎮</div><div><strong>1. Modrinth App’i kur</strong><span><a href="https://modrinth.com/app" target="_blank" rel="noopener noreferrer">Modrinth App’i indir</a> ve aç.</span></div></div>
+          <div class="req"><div class="req-icon">📦</div><div><strong>2. Mod paketini indir</strong><span>Aşağıdaki düğmeyle Vahşi Toprak paket dosyasını indir.</span></div></div>
+          <div class="req"><div class="req-icon">⚙️</div><div><strong>3. Modrinth’e aktar</strong><span>Modrinth App’te yeni örnek oluşturup <b>.mrpack yükle</b> seçeneğine tıkla ve indirdiğin dosyayı göster. Sürüm, Fabric ve modlar kurulacak.</span></div></div>
+          <div class="req"><div class="req-icon">🌐</div><div><strong>4. Sunucuya bağlan</strong><span>Çok Oyunculu → Sunucu Ekle bölümüne bu adresi yaz: <code>vahsitoprak.play-mc.fun</code> <button class="copy-btn" type="button" id="copy-server" data-address="vahsitoprak.play-mc.fun">Kopyala</button></span></div></div>
+        </div>
+      </div>
+      <aside class="modbox"><h3>Vahşi Toprak Mod Paketi</h3><p>30 mod · Minecraft 26.3 · Fabric Loader 0.20.1</p><ul class="mod-list" id="mod-list"><li>Advanced Netherite</li><li>AppleSkin</li><li>Balm</li><li>Easy Anvils</li><li>Fabric API</li><li>FallingTree</li><li>Farmer’s Delight: Refabricated</li><li>Flan</li><li>Forge Config API Port</li><li>Friends &amp; Foes</li><li>Iris</li><li>Jade</li><li>JamLib</li><li>JEI</li><li>Litematica</li><li>Lithium</li><li>LYGraves</li><li>MaLiLib</li><li>Mezz’s Config</li><li>Naturalist</li><li>Puzzles Lib</li><li>Resourceful Lib</li><li>RightClickHarvest</li><li>Shogi</li><li>Sodium</li><li>Traveler’s Backpack</li><li>Visual Workbench</li><li>Simple Voice Chat</li><li>Waystones</li><li>Xaero’s Minimap</li></ul><span class="pill" id="loader-pill">FABRIC 0.20.1 · MINECRAFT 26.3</span><div class="pack-action"><a class="btn btn-primary" href="assets/vahsi-toprak-26.3-fabric.mrpack" download>⬇ Mod paketini indir (.mrpack)</a><p>Modrinth App’te .mrpack dosyasını yükleyince paket içindeki modlar ve Fabric kuruluma eklenir. Uyarı çıkarsa yalnızca bu sayfadan indirdiğin Vahşi Toprak paketine devam et.</p></div></aside>
+    </div></section>
+    <section class="join" id="katil"><div class="wrap"><div class="join-panel"><div><div class="eyebrow">Yolunu bulamadın mı?</div><h2>Discord’da buluşalım.</h2><p>Kurulumda yardıma ihtiyacın varsa veya topluluğu tanımak istiyorsan Discord sunucumuza uğra.</p></div><div class="join-actions"><a class="btn btn-primary" id="discord-link" href="#katil">Discord bağlantısı eklenecek <span>↗</span></a></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><strong>✦ VAHŞİ TOPRAK</strong><span>Birlikte keşfet. Birlikte inşa et.</span><span>© 2026 Vahşi Toprak</span></div></footer>
+  <script>
+    // Site bilgilerini eklemek için aşağıdaki ayarları güncelleyin.
+    const serverInfo = {
+      minecraftVersion: "26.3",
+      modLoader: "Fabric 0.20.1",
+      discordInvite: "https://discord.gg/gUyzGGsPpa",
+      mods: ["Advanced Netherite", "AppleSkin", "Balm", "Easy Anvils", "Fabric API", "FallingTree", "Farmer’s Delight: Refabricated", "Flan", "Forge Config API Port", "Friends & Foes", "Iris", "Jade", "JamLib", "JEI", "Litematica", "Lithium", "LYGraves", "MaLiLib", "Mezz’s Config", "Naturalist", "Puzzles Lib", "Resourceful Lib", "RightClickHarvest", "Shogi", "Sodium", "Traveler’s Backpack", "Visual Workbench", "Simple Voice Chat", "Waystones", "Xaero’s Minimap"]
+    };
+    if (serverInfo.minecraftVersion) document.getElementById("version-text").textContent = `Gerekli oyun sürümü: Minecraft ${serverInfo.minecraftVersion}.`;
+    if (serverInfo.modLoader) document.getElementById("loader-pill").textContent = `${serverInfo.modLoader.toUpperCase()} MODLARI`;
+    if (serverInfo.mods.length) document.getElementById("mod-list").innerHTML = serverInfo.mods.map(mod => `<li>${mod.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}</li>`).join("");
+    if (serverInfo.discordInvite) { const link = document.getElementById("discord-link"); link.href = serverInfo.discordInvite; link.target = "_blank"; link.rel = "noopener noreferrer"; link.innerHTML = "Discord’a katıl <span>↗</span>"; }
+    document.getElementById("copy-server").addEventListener("click", async (event) => {
+      const button = event.currentTarget;
+      try {
+        await navigator.clipboard.writeText(button.dataset.address);
+        button.textContent = "Kopyalandı";
+        setTimeout(() => { button.textContent = "Kopyala"; }, 1800);
+      } catch {
+        window.prompt("Sunucu adresini kopyala:", button.dataset.address);
+      }
+    });
+  </script>
+</body>
+</html>
